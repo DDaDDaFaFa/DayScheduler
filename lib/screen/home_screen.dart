@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import '../componant/calendar.dart';
 import '../componant/schedule_card.dart';
 import '../constant/colors.dart';
+import '../componant/schedule_bottom_sheet.dart';
 
 class HomeScreen extends StatefulWidget {
   const HomeScreen({super.key});
@@ -35,16 +36,15 @@ class _HomeScreenState extends State<HomeScreen> {
     );
   }
 
-
   FloatingActionButton renderFloatingActionButton() {
     return FloatingActionButton(
       onPressed: () {
-        showModalBottomSheet(context: context, builder: (_){
-          return Container(
-            color: Colors.white,
-            height: 300,
-          );
-        },
+        showModalBottomSheet(
+          context: context,
+          isScrollControlled: true,
+          builder: (_) {
+            return ScheduleBottomSheet();
+          },
         );
       },
       backgroundColor: PRIMARY_COLOR,
