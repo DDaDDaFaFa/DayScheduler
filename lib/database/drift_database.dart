@@ -9,6 +9,8 @@ import 'package:path_provider/path_provider.dart';
 part 'drift_database.g.dart';
 
 
+
+
 @DriftDatabase(
   tables: [
     Schedules,
